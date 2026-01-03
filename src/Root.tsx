@@ -1,20 +1,19 @@
-import { Link, Outlet } from "@tanstack/react-router";
+import { Outlet } from "@tanstack/react-router";
+import { AppSidebar } from "./components/AppSidebar";
+import AppNavbar from "./components/AppNavbar";
 
 export default function Root() {
   return (
     <>
-      <h1>Hello World</h1>
-      <Link to='/' className='[&.active]:font-bold'>
-        Home
-      </Link>{" "}
-      <Link to='/login' className='[&.active]:font-bold'>
-        Login
-      </Link>{" "}
-      <Link to='/register' className='[&.active]:font-bold'>
-        Register
-      </Link>
-      <hr />
-      <Outlet />
+      <div className='flex w-full'>
+        <AppSidebar />
+        <div className='flex-1 min-h-screen flex flex-col'>
+          <AppNavbar />
+          <div className='flex-1 pt-16 pb-32 pl-10 pr-10'>
+            <Outlet />
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -4,10 +4,10 @@ import {
   createRouter,
   RouterProvider,
 } from "@tanstack/react-router";
-import Root from "./Root";
-import Home from "./screens/Home";
-import Login from "./screens/Login";
-import Register from "./screens/Register";
+import Root from "@/Root";
+import Home from "@/screens/Home";
+import Login from "@/screens/Login";
+import Register from "@/screens/Register";
 
 const rootRoute = createRootRoute({
   component: () => <Root />,

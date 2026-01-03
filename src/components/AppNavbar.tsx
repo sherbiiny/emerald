@@ -1,0 +1,39 @@
+import { Moon, Search, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { useTheme } from "./ui/theme-provider";
+
+export default function AppNavbar() {
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
+  return (
+    <header className='flex w-full d-block bg-background h-16 items-center gap-2 border-b px-4'>
+      {/* Sidebar Toggle */}
+      <SidebarTrigger className='h-8 w-8' />
+      <Separator orientation='vertical' className='mr-2 h-6' />
+
+      {/* Search Bar */}
+      <Search />
+
+      {/* Theme Toggle */}
+      <div className='ml-auto'>
+        <Button
+          // variant="ghost"
+          size='icon'
+          onClick={toggleTheme}
+          className='h-8 w-8'
+        >
+          {theme === "dark" ? (
+            <Sun className='h-4 w-4' />
+          ) : (
+            <Moon className='h-4 w-4' />
+          )}
+          <span className='sr-only'>Toggle theme</span>
+        </Button>
+      </div>
+    </header>
+  );
+}
