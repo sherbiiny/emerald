@@ -1,8 +1,9 @@
-import { Moon, Search, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useTheme } from "./ui/theme-provider";
+import { AppSearchbar } from "./AppSearchbar";
 
 export default function AppNavbar() {
   const { theme, setTheme } = useTheme();
@@ -16,7 +17,7 @@ export default function AppNavbar() {
       <Separator orientation='vertical' className='mr-2 h-6' />
 
       {/* Search Bar */}
-      <Search />
+      <AppSearchbar />
 
       {/* Theme Toggle */}
       <div className='ml-auto'>
